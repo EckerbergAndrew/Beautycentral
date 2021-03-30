@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BeautyCentral</string>
+    <string name="calendar">Calendar</string>
+    <string name="splash_text">Beauty Central</string>
+</resources>
