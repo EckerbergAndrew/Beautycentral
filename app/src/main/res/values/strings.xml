@@ -2,6 +2,7 @@
     <string name="app_name">BeautyCentral</string>
     <string name="calendar">Calendar</string>
     <string name="splash_text">Beauty Central</string>
+    <string name="selected_date">stand-in</string>
 
     <string name="hint_clientName">Name</string>
     <string name="contactNo">Contact number</string>

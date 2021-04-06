@@ -32,5 +32,9 @@ class ClientAdapter constructor(private var clients: List<ClientModel>,
             itemView.clientNotes.text=client.notes
             itemView.setOnClickListener{listener.onClientClick(client)}
         }
+
+        fun bind(client: ClientModel) {
+
+        }
     }
 }
