@@ -6,9 +6,9 @@
     android:id="@+id/calendar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffd6d1"
-    tools:context=".activities.MainActivity">
-
+    android:background="@color/peach"
+    tools:context=".activities.CalendarActivity">
+<!-- bg color above: ffd6d1 -->
     <DatePicker
         android:id="@+id/date_picker"
         android:layout_width="360dp"

@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.card_client.view.*
 import kotlinx.android.synthetic.main.client_list.*
+import kotlinx.android.synthetic.main.daily.*
 import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.info
+import org.jetbrains.anko.AnkoLogger
 import org.wit.example.beautycentral.BeautyListener
 import org.wit.example.beautycentral.ClientAdapter
 import org.wit.example.beautycentral.R
@@ -19,7 +22,7 @@ import org.jetbrains.anko.startActivityForResult
 import org.wit.example.beautycentral.models.ClientModel
 
 
-class ClientListActivity : AppCompatActivity(), BeautyListener {
+class ClientListActivity : AppCompatActivity(), BeautyListener, AnkoLogger {
 
     lateinit var app: MainApp
 
@@ -31,6 +34,11 @@ class ClientListActivity : AppCompatActivity(), BeautyListener {
         val layoutManager=LinearLayoutManager(this)
         recyclerView.layoutManager=layoutManager
         recyclerView.adapter= ClientAdapter(app.clients.findAll(),this)
+
+        addClientButton.setOnClickListener(){
+            info("add client button pressed")
+            setContentView(R.layout.client_add)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -41,16 +49,17 @@ class ClientListActivity : AppCompatActivity(), BeautyListener {
     }
 
     override fun onClientClick(client: ClientModel) {
-        startActivityForResult(intentFor<ClientActivity>().putExtra("Client edit", client),0)
+        startActivityForResult(intentFor<ClientActivity>().putExtra("client_edit", client),0)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         recyclerView.adapter?.notifyDataSetChanged()
         super.onActivityResult(requestCode, resultCode, data)
     }
+
 }
 
-class ClientAdapter constructor(private var clients:List<ClientModel>) :
+/*class ClientAdapter constructor(private var clients:List<ClientModel>) :
     RecyclerView.Adapter<ClientAdapter.MainHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientAdapter.MainHolder {
@@ -76,7 +85,7 @@ class ClientAdapter constructor(private var clients:List<ClientModel>) :
             itemView.clientNotes.text=client.notes
         }
     }
-    }
+    }*/
 //TODO put the puzzle pieces together
 //TODO specifically, list item, daily, clientadd, and tie them to main
 //TODO figure out recyclerview and card view stuff

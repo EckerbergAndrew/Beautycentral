@@ -8,94 +8,111 @@
     tools:context=".activities.ClientActivity"
     android:background="@color/peach">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/serviceText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/service"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNo"
+        tools:layout_editor_absoluteX="-8dp" />
+
+    <Spinner
+        android:id="@+id/serviceSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="3dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/serviceText"
+        android:entries="@array/services"
+        android:background="@color/drkpeach"
+         />
+
+    <TextView
+        android:id="@+id/nametitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_clientName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-2dp" />
+
+    <EditText
+        android:id="@+id/bcTitle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:autofillHints=""
+        android:background="@color/drkpeach"
+        android:inputType="text"
+        android:maxLength="40"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textSize="14sp"
+        app:endIconMode="clear_text"
+        app:layout_constraintTop_toBottomOf="@+id/nametitle"/>
+
+    <TextView
+        android:id="@+id/contacttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contactNo"
+        app:layout_constraintTop_toBottomOf="@+id/bcTitle"
+        tools:layout_editor_absoluteX="6dp" />
+
+    <EditText
+        android:id="@+id/phoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        android:autofillHints=""
+        android:background="@color/drkpeach"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:textSize="14sp"
+        app:endIconMode="clear_text"
+        app:layout_constraintTop_toBottomOf="@+id/contacttitle"
+        tools:layout_editor_absoluteX="-2dp" />
+
+    <TextView
+        android:id="@+id/notestitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/notes"
+        app:layout_constraintTop_toBottomOf="@id/serviceSpinner"/>
+    <EditText
+        android:id="@+id/notesfield"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:inputType="text|textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/notestitle"
+        android:background="@color/drkpeach"
+        android:hint="Treatment details, special requests, allergies, etc."
+        />
+
+    <Button
+        android:id="@+id/btnaddappt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/btnaddappttxt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notesfield"
+        app:layout_constraintVertical_bias="0.152" />
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            app:elevation="0dp"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbarAdd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/appBarLayout"
-            android:fillViewport="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hint_clientName"
-                    android:layout_marginLeft="3dp"/>
-                <EditText
-                    android:id="@+id/bcTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_margin="8dp"
-                    android:autofillHints=""
-                    android:inputType="text"
-                    android:maxLength="40"
-                    android:maxLines="1"
-                    android:padding="8dp"
-                    android:textSize="14sp"
-                    android:background="@color/drkpeach"
-                    app:endIconMode="clear_text" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/contactNo"
-                    android:layout_marginLeft="3dp"/>
-
-                <EditText
-                    android:id="@+id/phoneNo"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_margin="8dp"
-                    android:autofillHints=""
-                    android:inputType="phone"
-                    android:maxLines="1"
-                    android:padding="8dp"
-                    android:textSize="14sp"
-                    android:background="@color/drkpeach"
-                    app:endIconMode="clear_text"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/service"
-                    android:layout_marginLeft="3dp"/>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
-
-                    <AutoCompleteTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelbtntxt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notesfield"
+        app:layout_constraintVertical_bias="0.152" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--for adding clients (items) to list -->

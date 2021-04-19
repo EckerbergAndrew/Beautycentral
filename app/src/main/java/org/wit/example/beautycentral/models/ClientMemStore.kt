@@ -10,6 +10,7 @@ internal fun getId():Long{
 }
 
 class ClientMemStore : ClientStore, AnkoLogger {
+
     val clients=ArrayList<ClientModel>()
 
     override fun findAll(): List<ClientModel> {

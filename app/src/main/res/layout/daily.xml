@@ -3,8 +3,8 @@
  + button adds a client, bringing them to client_add.xml-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="395dp"
-    android:layout_height="810dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center|right"
     android:background="@color/peach"
     android:orientation="horizontal"
@@ -12,14 +12,26 @@
     <!-- layout width 365dp; height 670dp-->
     <!-- the exit button: -->
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/timelist"
         android:layout_width="55dp"
         android:layout_height="630dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="115dp"
+        app:layout_constraintEnd_toStartOf="@id/apptcardView"
         android:text="@string/list"
-        android:textSize="9sp" />
+        android:textSize="9sp" /> -->
+
+
+    <ImageView
+        android:id="@+id/timelist"
+        android:layout_width="65dp"
+        android:layout_height="670dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="25dp"
+        android:src="@drawable/timelist"
+        app:layout_constraintEnd_toStartOf="@id/apptcardView" />
 
     <ImageButton
         android:layout_width="20dp"
@@ -31,33 +43,15 @@
 
     <!--add client button: -->
 
-    <Button
-        android:id="@+id/addClientButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/timelist"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="1"
-        android:text="Add" />
-
-    <TextView
-        android:id="@+id/dateLabel"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/addClientButton"
-        android:text="" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/apptcardView"
-        android:layout_width="280dp"
-        android:layout_height="630dp"
-        android:layout_below="@+id/dateLabel"
+        android:layout_width="279dp"
+        android:layout_height="670dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="105dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="25dp"
         android:layout_toEndOf="@+id/timelist"
         android:layout_toRightOf="@id/timelist"
         android:background="@color/drkpeach">
@@ -89,8 +83,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="4" />
+
         </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/addClientButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-1dp"
+        android:layout_marginTop="8dp"
+        android:text="Add" />
 </RelativeLayout>
