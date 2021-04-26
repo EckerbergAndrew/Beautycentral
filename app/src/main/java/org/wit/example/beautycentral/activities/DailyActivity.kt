@@ -7,11 +7,13 @@ import kotlinx.android.synthetic.main.daily.*
 import java.util.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.intentFor
 import org.wit.example.beautycentral.R
 
-class dailyActivity : AppCompatActivity(), AnkoLogger {
+class DailyActivity : AppCompatActivity(), AnkoLogger {
 
-    val date=intent.getStringExtra("EXTRA_DATE")
+    val addClientReqCode=23
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.daily)
@@ -19,7 +21,15 @@ class dailyActivity : AppCompatActivity(), AnkoLogger {
 
         addClientButton.setOnClickListener(){
             info("add client button pressed")
-            setContentView(R.layout.client_add)
+            //setContentView(R.layout.client_add)
+            startActivityForResult(intentFor<AddClientActivity>(),addClientReqCode)
+
+        }
+        backBtn.setOnClickListener(){
+            info("back button pressed")
+            //setContentView(R.layout.activity_main)
+            startActivity(intentFor<CalendarActivity>())
+
         }
     }
 }

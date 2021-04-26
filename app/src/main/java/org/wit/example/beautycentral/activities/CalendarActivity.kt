@@ -11,16 +11,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.intentFor
 import org.wit.example.beautycentral.R
 import org.wit.example.beautycentral.main.MainApp
 import org.wit.example.beautycentral.models.ClientModel
 import kotlin.collections.ArrayList
 
-class ClientActivity : AppCompatActivity(), AnkoLogger {
+class CalendarActivity : AppCompatActivity(), AnkoLogger {
 
     lateinit var app:MainApp
     var client=ClientModel()
     var edit=false
+    val dailyReqCode=12
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +41,9 @@ class ClientActivity : AppCompatActivity(), AnkoLogger {
 
         btnViewSched.setOnClickListener(){
             info("View schedule button pressed")
-            setContentView(R.layout.daily)
-
+            //setContentView(R.layout.daily)
+            startActivity(intentFor<DailyActivity>())
             }
+        //startActivityForResult(intentFor<MapsActivity>().putExtra("location", location), LOCATION_REQUEST)
     }
 }
-    fun DatePicker.getDate(): Date{
-        val calendar=Calendar.getInstance()
-        calendar.set(year, month,dayOfMonth)
-        return calendar.time
-    }

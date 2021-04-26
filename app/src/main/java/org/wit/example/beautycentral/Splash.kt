@@ -6,7 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import org.wit.example.beautycentral.activities.ClientActivity
+import org.wit.example.beautycentral.activities.CalendarActivity
 
 
 class Splash : AppCompatActivity(), AnkoLogger {
@@ -16,7 +16,7 @@ class Splash : AppCompatActivity(), AnkoLogger {
         info("App has started")
 
         Handler().postDelayed({
-            val intent=Intent(this, ClientActivity::class.java)
+            val intent=Intent(this, CalendarActivity::class.java)
             startActivity(intent)
             finish()
         },3_000L)

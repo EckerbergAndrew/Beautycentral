@@ -11,6 +11,7 @@
     <string name="notes">Notes</string>
     <string name="cancelbtntxt">Cancel</string>
     <string name="btnaddappttxt">Add appointment</string>
+    <string name="saveappointment">Save Appointment</string>
     <string-array name="services">
         <item>Facial</item>
         <item>Massage</item>

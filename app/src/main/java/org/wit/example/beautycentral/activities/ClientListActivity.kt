@@ -43,13 +43,13 @@ class ClientListActivity : AppCompatActivity(), BeautyListener, AnkoLogger {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.addClientButton -> startActivityForResult<ClientActivity>(0)
+            R.id.addClientButton -> startActivityForResult<AddClientActivity>(0)
         }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onClientClick(client: ClientModel) {
-        startActivityForResult(intentFor<ClientActivity>().putExtra("client_edit", client),0)
+        startActivityForResult(intentFor<AddClientActivity>().putExtra("client_edit", client),0)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

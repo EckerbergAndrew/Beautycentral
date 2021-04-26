@@ -32,7 +32,7 @@ class AddClientActivity: AppCompatActivity(),AnkoLogger {
             clientPhone.setText(client.phoneNo)
             clientService.setText(client.service)
             clientNotes.setText(client.notes)
-            btnaddappt.setText("Save Appointment")
+            btnaddappt.setText(getString(R.string.saveappointment))
         }
         btnaddappt.setOnClickListener {
             client.name = clientName.text.toString()
