@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_bc_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyCentral">
-        <activity android:name=".activities.ClientActivity"/>
         <activity android:name=".Splash"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -19,10 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.DailyActivity"/>
-        <activity android:name=".activities.AddClientActivity"/>
-        <activity android:name=".activities.ClientListActivity"/>
         <activity android:name=".activities.CalendarActivity"/>
+        <activity android:name=".activities.DailyActivityList"/>
+        <activity android:name=".activities.AddClientActivity"/>
     </application>
 
 </manifest>

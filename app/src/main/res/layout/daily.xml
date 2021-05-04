@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--this is the daily schedule where the card-view goes.
- + button adds a client, bringing them to client_add.xml-->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,19 +9,7 @@
     android:background="@color/peach"
     android:orientation="horizontal"
     android:paddingStart="10dp">
-    <!-- layout width 365dp; height 670dp-->
-    <!-- the exit button: -->
-
-   <!-- <TextView
-        android:id="@+id/timelist"
-        android:layout_width="55dp"
-        android:layout_height="630dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="115dp"
-        app:layout_constraintEnd_toStartOf="@id/apptcardView"
-        android:text="@string/list"
-        android:textSize="9sp" /> -->
-
+    <!-- layout width 365dp; height 670dp -->
 
     <ImageView
         android:id="@+id/timelist"
@@ -31,7 +19,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="25dp"
         android:src="@drawable/timelist"
-        app:layout_constraintEnd_toStartOf="@id/apptcardView" />
+        app:layout_constraintEnd_toStartOf="@id/recyclerView" />
 
     <Button
         android:id="@+id/backBtn"
@@ -46,57 +34,8 @@
         android:bottomRightRadius="15dp"
         android:bottomLeftRadius="10dp"
         android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
+        android:topRightRadius="10dp" />
 
-        app:srcCompat="@drawable/ic_round_close_24" />
-
-    <!--add client button: -->
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/apptcardView"
-        android:layout_width="279dp"
-        android:layout_height="670dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="25dp"
-        android:layout_toEndOf="@+id/timelist"
-        android:layout_toRightOf="@id/timelist"
-        android:background="@color/drkpeach">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/clientName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@style/TextAppearance.AppCompat.Large" />
-
-            <TextView
-                android:id="@+id/clientPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/clientService"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/clientNotes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minLines="4" />
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
     <Button
         android:id="@+id/addClientButton"
         android:layout_width="wrap_content"
@@ -104,4 +43,17 @@
         android:layout_marginBottom="-1dp"
         android:layout_marginTop="8dp"
         android:text="Add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="279dp"
+        android:layout_height="593dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="25dp"
+        android:layout_toRightOf="@id/timelist"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 </RelativeLayout>

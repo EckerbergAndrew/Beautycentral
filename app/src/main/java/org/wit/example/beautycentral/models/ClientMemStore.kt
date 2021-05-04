@@ -3,9 +3,9 @@ package org.wit.example.beautycentral.models
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 
-var lastId=0L
+var lastId=0
 
-internal fun getId():Long{
+internal fun getId(): Int {
     return lastId++
 }
 
