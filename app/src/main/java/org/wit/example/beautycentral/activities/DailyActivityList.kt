@@ -31,8 +31,7 @@ class DailyActivityList : AppCompatActivity(), AnkoLogger, BeautyListener {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView?.layoutManager=layoutManager
-        recyclerView?.adapter= ClientAdapter(clientShow,this)
-                //app.clients.findAll(),this)
+        recyclerView?.adapter= ClientAdapter(app.clients.findAll(),this)
 
         addClientButton.setOnClickListener(){
             info("add client button pressed")
