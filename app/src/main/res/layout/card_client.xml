@@ -5,37 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="4dp"
     card_view:elevation="10dp"
+    android:layout_marginEnd="4dp"
+    card_view:cardCornerRadius="10dp"
     card_view:cardBackgroundColor="@color/drkpeach">
 
     <RelativeLayout
         android:id="@+id/LL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:padding="5dp"
         >
-        <TextView
-            android:id="@+id/clientName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/clientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fontFamily="sans-serif-condensed"
+                android:text="name"
+                android:textSize="20sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
         <TextView
             android:id="@+id/clientPhone"
             android:layout_width="wrap_content"
+            android:text="phone"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
             android:layout_below="@id/clientName"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
         <TextView
             android:id="@+id/clientService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="service"
             android:layout_below="@id/clientPhone"
             android:paddingBottom="5dp"/>
         <TextView
             android:id="@+id/clientNotes"
             android:layout_width="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="notes"
             android:layout_height="wrap_content"
             android:layout_below="@id/clientService"
             />

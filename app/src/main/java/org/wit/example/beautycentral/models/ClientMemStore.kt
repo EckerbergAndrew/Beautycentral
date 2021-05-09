@@ -3,17 +3,21 @@ package org.wit.example.beautycentral.models
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 
-var lastId=0
+var lastId=0L
 
-internal fun getId(): Int {
+internal fun getId(): Long {
     return lastId++
 }
 
 class ClientMemStore : ClientStore, AnkoLogger {
 
-    val clients=ArrayList<ClientModel>()
+    private val clients=HashSet<ClientModel>()
 
-    override fun findAll(): List<ClientModel> {
+    override fun find(selectedDate: String): Set<ClientModel> {
+        return clients
+    }
+
+    override fun findAll(): Set<ClientModel> {
         return clients
     }
 
@@ -24,7 +28,7 @@ class ClientMemStore : ClientStore, AnkoLogger {
     }
 
     override fun update(client: ClientModel) {
-        var foundClient : ClientModel?=clients.find{p -> p.id == client.id}
+        val foundClient : ClientModel?=clients.find{p -> p.id == client.id}
         if(foundClient != null){
             foundClient.name=client.name
             foundClient.phoneNo=client.phoneNo
@@ -33,7 +37,12 @@ class ClientMemStore : ClientStore, AnkoLogger {
             logAll()
         }
     }
-    fun logAll(){
-        clients.forEach{info("${it}" )}
+
+    override fun delete(client: ClientModel) {
+       clients.remove(client)
+        }
+
+    private fun logAll(){
+        clients.forEach{info("$it" )}
     }
 }

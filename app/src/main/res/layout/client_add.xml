@@ -107,6 +107,7 @@
         app:layout_constraintTop_toBottomOf="@id/clientnotes"
         app:layout_constraintVertical_bias="0.152" />
 
+    <!-- CANCEL BUTTON VV-->
     <Button
         android:id="@+id/btncancel"
         android:layout_width="wrap_content"
@@ -119,6 +120,7 @@
         app:layout_constraintTop_toBottomOf="@id/clientnotes"
         app:layout_constraintVertical_bias="0.152" />
 
+    <!-- DELETE BUTTON VV-->
     <Button
         android:id="@+id/btndel"
         android:layout_width="wrap_content"
@@ -127,7 +129,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btnaddappt"
         app:layout_constraintTop_toBottomOf="@+id/btnaddappt"
         app:layout_constraintVertical_bias="0.061" />
 

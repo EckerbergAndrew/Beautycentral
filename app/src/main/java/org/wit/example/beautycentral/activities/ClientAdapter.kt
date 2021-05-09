@@ -13,15 +13,16 @@ interface BeautyListener {
     fun onClientClick(client: ClientModel)
 }
 
-class ClientAdapter constructor(private var clients: List<ClientModel>,
+class ClientAdapter constructor(private var clients: Set<ClientModel>,
                                 private val listener: BeautyListener) : RecyclerView.Adapter<ClientAdapter.MainHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
         return MainHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_client, parent, false))
     }
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
-        val client = clients[holder.adapterPosition]
-        holder.bind(client,listener)
+        val client = clients.elementAt(position)
+        holder.bind(client, listener)
     }
 
     override fun getItemCount(): Int = clients.size

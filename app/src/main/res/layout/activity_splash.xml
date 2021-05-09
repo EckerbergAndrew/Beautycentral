@@ -7,19 +7,14 @@
     android:background="#FFD6D1"
     tools:context=".Splash">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="308dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="8dp"
-        android:fontFamily="cursive"
-        android:singleLine="true"
-        android:text="@string/splash_text"
-        android:textSize="55sp"
+    <ImageView
+        android:id="@+id/bcLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bc_logo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
